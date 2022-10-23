@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krypto</title>
+
+    <link rel="stylesheet" href="./css/style-index.css">
+
+</head>
+
+<body>
+    <!--Título-->
+    <header class="containerTopo">
+        <h1 class="titulo">Krypto</h1>
+        <p class="subtitulo">Faça a criptografia de seus textos através de nossa ferramenta. <br>Disponibilizamos a Cifra de César e a Base64 como alternativas.</p>
+    </header>
+
+    <!--Container central-->
+    <main class="containerCentral">
+
+        <!--Lista de seleção de opção de criptografia-->
+        <select name="caixaSelecao" id="selectBox" class="caixaSelecao">
+        <option value="1" disabled selected>Selecione uma opção</option>
+        <option value="2">Cifra de César</option>
+        <option value="3">Base64</option>
+    </select>
+
+
+        <form action="#" method="get" class="formCifraDeCesar">
+            <input type="text" class="campoMensagem"><br>
+            <button type="submit" class="botaoCodificar" id="btnCodificar">Codificar</button>
+            <button type="submit" class="botaoDecodificar" id="btnDecodificar">Decodificar</button>
+        </form>
+
+        <p class="saidaJS"></p>
+
+    </main>
+
+    <!--Rodapé da página-->
+    <footer class="containerRodape">
+        <p>&copy;2022 Krypto. Projeto Programadores Cariocas. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
