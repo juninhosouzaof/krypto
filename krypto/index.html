@@ -1,48 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krypto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sono:wght@300&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="./css/style-index.css">
+    <link rel="shortcut icon" href="./assets/lock.svg" type="image/x-icon" />
 
-</head>
+    <link rel="stylesheet" href="./css/style.css" />
 
-<body>
-    <!--Título-->
-    <header class="containerTopo">
-        <h1 class="titulo">Krypto</h1>
-        <p class="subtitulo">Faça a criptografia de seus textos através de nossa ferramenta. <br>Disponibilizamos a Cifra de César e a Base64 como alternativas.</p>
-    </header>
+    <title>krypto - Seu bloco codificador!</title>
+  </head>
 
-    <!--Container central-->
-    <main class="containerCentral">
+  <body>
+    <main>
+      <div class="container">
+        <div class="ceu">
+          <div class="stars"></div>
+          <div class="stars2"></div>
 
-        <!--Lista de seleção de opção de criptografia-->
-        <select name="caixaSelecao" id="selectBox" class="caixaSelecao">
-        <option value="1" disabled selected>Selecione uma opção</option>
-        <option value="2">Cifra de César</option>
-        <option value="3">Base64</option>
-    </select>
+          <h1 class="titulo-principal">krypto</h1>
+        </div>
 
+        <br />
+        <div class="subcontainer">
+          <form action="#">
+            <textarea
+              class="campo-mensagem"
+              name="mensagem"
+              id="mensagem"
+              cols="50"
+              rows="3"
+              placeholder="Escreva aqui a sua mensagem"
+            ></textarea>
 
-        <form action="#" method="get" class="formCifraDeCesar">
-            <input type="text" class="campoMensagem"><br>
-            <button type="submit" class="botaoCodificar" id="btnCodificar">Codificar</button>
-            <button type="submit" class="botaoDecodificar" id="btnDecodificar">Decodificar</button>
-        </form>
+            <textarea
+              id="resultado"
+              class="mensagem resultado"
+              cols="50"
+              rows="3"
+              readonly
+            ></textarea>
 
-        <p class="saidaJS"></p>
+            <label id="selecione" for="select"></label>
+            <select name="select" class="select" id="select">
+              <option value="selecione" disabled selected>Selecione</option>
+              <option value="base64">Base64</option>
+              <option value="cifra">Cifra de césar</option>
+            </select>
 
+            <div class="chave-container">
+              <label class="chave" for="range">Nível da Cifra de César</label>
+              <div class="slider-range">
+                <input
+                  type="range"
+                  value="1"
+                  min="1"
+                  max="26"
+                  class="range"
+                  id="range"
+                  oninput="rangenumber.value=value"
+                />
+                <input
+                  type="number"
+                  value="1"
+                  id="rangenumber"
+                  min="1"
+                  max="26"
+                  oninput="range.value=value"
+                />
+              </div>
+            </div>
+
+            <div class="radio-button">
+              <div class="radio">
+                <input
+                  type="radio"
+                  name="codificar"
+                  id="codificar"
+                  value="codificar"
+                  checked
+                />
+                <label class="opcao-codificar" for="codificar"
+                  >Criptografar</label
+                >
+              </div>
+
+              <div class="radio">
+                <input
+                  type="radio"
+                  name="codificar"
+                  id="decodificar"
+                  value="decodificar"
+                />
+                <label class="opcao-codificar" for="decodificar"
+                  >Descriptografar</label
+                >
+              </div>
+            </div>
+
+            <div class="btn">
+              <button>Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </main>
 
-    <!--Rodapé da página-->
-    <footer class="containerRodape">
-        <p>&copy;2022 Krypto. Projeto Programadores Cariocas. Todos os direitos reservados.</p>
-    </footer>
-</body>
-
+    <script defer src="./js/script.js"></script>
+  </body>
 </html>
